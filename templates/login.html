@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+
+{% block title %}
+    Grocery Shop - Login Page
+{% endblock %}
+
+{% block content %}
+
+<h1 class="display-1">Login</h1>
+
+<form action="{{ url_for('login') }}" method="post" class="form">
+    <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-primary">
+    </div>
+</form>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

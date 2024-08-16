@@ -1,0 +1,39 @@
+{% extends 'layout.html'%}
+
+{% block title %}
+    Grocery Shop - Register Page
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">Register</h1>
+
+    <form action="{{ url_for('register') }}" method="post" class="form">
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password" class="form-label">Confirm Password</label>
+            <input type="password" name="confirm_password" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info mt-3">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
