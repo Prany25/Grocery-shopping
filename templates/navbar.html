@@ -13,13 +13,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{url_for('profile')}}">Profile</a>
               </li>
-              <ul class="navbar-nav ms-auto">
-                {% if 'user_id' in session %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-                  </li>
-                {% endif %}
-              </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+              </li>
             {% else %}
               <li class="nav-item">
                 <a class="nav-link" href="{{url_for('register')}}">Register</a>
