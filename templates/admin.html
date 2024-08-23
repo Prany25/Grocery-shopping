@@ -17,6 +17,7 @@
         <tr>
             <th>Category ID</th>
             <th>Category Name</th>
+            <th>No. of Products</th>
             <th>Actions</th>
         </tr>
     </thread>
@@ -25,6 +26,7 @@
     <tr>
         <td>{{category.id}}</td>
         <td>{{category.name}}</td>
+        <td>{{category.products|length}}</td>
         <td>
             <a href="{{url_for('show_category', id=category.id)}}" class="btn btn-primary">
                 <i class="fas fa-search   "></i>
