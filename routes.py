@@ -348,5 +348,5 @@ def delete_product_post(id):
         return redirect(url_for('admin'))
     db.session.delete(product)
     db.session.commit()
-    flash('Product deleted Successfully')
-    return redirect(url_for('show_category',id=product.category_id))
+    flash('Product was deleted Successfully')
+    return redirect(url_for('show_category',id=product.category_id)) 
