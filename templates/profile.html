@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block content %}
+<div class="Heading">
     <h1 class="display-1">
         Hello
         <span class="text-muted">@{{user.username}}</span>
     </h1>
-
     <div class="profile-picture">
         <img src='https://api.dicebear.com/9.x/lorelei/svg?seed={{user.username}}' Width=100 alt=""> 
     </div>
-
+</div>
     <form action="" method="post" class="post">
         <div class="form-group">
             <label for="username" class="form-label"> Username</label>
@@ -31,8 +31,31 @@
             <label for="name" class="form-label">Name</label>
             <input type="text" name="name" value={{user.name}} id="name" class="form-control">
         </div>
+    <div class="buttons"> 
         <div class="form-group">
             <input type="submit" value="Update" class="btn btn-primary" required>
         </div>
+        <a href="{{url_for('logout')}}" class="btn btn-outline-danger m-3">Logout</a>
     </form>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+    .Heading{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .profile-picture{
+        border: 2px solid black;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .buttons{
+        display: flex;
+        justify-content: center;
+        align-items:center; 
+    }
+</style>
 {% endblock %}
